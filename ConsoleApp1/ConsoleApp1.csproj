@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55DE685C-1843-44F9-AD4E-E00C510E1F7B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ConsoleApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\MyContext.cs" />
+    <Compile Include="Helper\IEntity.cs" />
+    <Compile Include="Migrations\202111212045101_InitialCreate.cs" />
+    <Compile Include="Migrations\202111212045101_InitialCreate.designer.cs">
+      <DependentUpon>202111212045101_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111212118322_Prva.cs" />
+    <Compile Include="Migrations\202111212118322_Prva.designer.cs">
+      <DependentUpon>202111212118322_Prva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111212255078_Druga.cs" />
+    <Compile Include="Migrations\202111212255078_Druga.designer.cs">
+      <DependentUpon>202111212255078_Druga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111212302000_Treca.cs" />
+    <Compile Include="Migrations\202111212302000_Treca.designer.cs">
+      <DependentUpon>202111212302000_Treca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111212311303_Cetvrta.cs" />
+    <Compile Include="Migrations\202111212311303_Cetvrta.designer.cs">
+      <DependentUpon>202111212311303_Cetvrta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111220029060_Peta.cs" />
+    <Compile Include="Migrations\202111220029060_Peta.designer.cs">
+      <DependentUpon>202111220029060_Peta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111221628474_Sesta.cs" />
+    <Compile Include="Migrations\202111221628474_Sesta.designer.cs">
+      <DependentUpon>202111221628474_Sesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AkademskaGodina.cs" />
+    <Compile Include="Models\Fakultet.cs" />
+    <Compile Include="Models\Korisnik.cs" />
+    <Compile Include="Models\Nastavnik.cs" />
+    <Compile Include="Models\Referent.cs" />
+    <Compile Include="Models\Smjer.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\UpisGodine.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\AkademskaGodinaUI.cs" />
+    <Compile Include="UI\FakultetUI.cs" />
+    <Compile Include="UI\SmjerUI.cs" />
+    <Compile Include="UI\StudentUI.cs" />
+    <Compile Include="UI\UpisGodineUI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202111212045101_InitialCreate.resx">
+      <DependentUpon>202111212045101_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111212118322_Prva.resx">
+      <DependentUpon>202111212118322_Prva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111212255078_Druga.resx">
+      <DependentUpon>202111212255078_Druga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111212302000_Treca.resx">
+      <DependentUpon>202111212302000_Treca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111212311303_Cetvrta.resx">
+      <DependentUpon>202111212311303_Cetvrta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111220029060_Peta.resx">
+      <DependentUpon>202111220029060_Peta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111221628474_Sesta.resx">
+      <DependentUpon>202111221628474_Sesta.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
